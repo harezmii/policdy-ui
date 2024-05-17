@@ -16,7 +16,7 @@ spec:
               service:
                 name: test-api2-service
                 port:
-                  number: 8181
+                  number: 80
       host: test-api2.gazi.edu.tr
   tls:
     - hosts:
