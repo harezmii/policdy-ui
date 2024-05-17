@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: test-api2-server-http-ingress
+  namespace: default
+  annotations:
+    haproxy.org/server-ssl: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: test-api2-service
+                port:
+                  number: 8181
+      host: test-api2.gazi.edu.tr
+  tls:
+    - hosts:
+        - test-api2.gazi.edu.tr
+      secretName: tls-secret

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-api2-deployment
+  namespace: default
+  labels:
+    app: test-api2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: test-api2
+  template:
+    metadata:
+      labels:
+        app: test-api2
+    spec:
+      containers:
+      - name: test-api-image
+        image: 10.252.0.103:8082/kubernetes-test-image/test-api2:v1
+        ports:
+          - containerPort: 8181
+
+      imagePullSecrets:
+        - name: regcred
