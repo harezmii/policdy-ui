@@ -18,4 +18,7 @@ spec:
                 port:
                   number: 80
       host: test-api2.gazi.edu.tr
-
+  tls:
+    - hosts:
+        - test-api2.gazi.edu.tr
+      secretName: tls-secret
