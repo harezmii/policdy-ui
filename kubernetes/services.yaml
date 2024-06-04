@@ -7,5 +7,5 @@ spec:
     app: test-api2
   ports:
     - protocol: TCP
-      port: 80
+      port: 443
       targetPort: 8181
