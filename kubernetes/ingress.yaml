@@ -7,6 +7,10 @@ metadata:
 
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+        - test-api-go.gazi.edu.tr
+      secretName: tls-secret
   rules:
     - http:
         paths:
@@ -18,4 +22,5 @@ spec:
                 port:
                   number: 80
       host: test-api2.gazi.edu.tr
+
 
