@@ -5,6 +5,7 @@ metadata:
   namespace: default
   annotations:
     nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/cors-allow-origin: "https://test-api2.gazi.edu.tr/, http://test-api2.gazi.edu.tr/"
 
 
 spec:
